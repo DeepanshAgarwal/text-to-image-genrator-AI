@@ -2,9 +2,14 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { assets, plans } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
+import { toast } from "react-toastify";
 
 const BuyCredits = () => {
     const { user } = useContext(AppContext);
+
+    const purchaseCredits = () => {
+        toast.info("Purchasing not available");
+    };
 
     return (
         <motion.div
@@ -36,7 +41,10 @@ const BuyCredits = () => {
                             </span>
                             / {item.credits} credits
                         </p>
-                        <button className="w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52">
+                        <button
+                            onClick={purchaseCredits}
+                            className="w-full bg-gray-800 text-white mt-8 text-sm rounded-md py-2.5 min-w-52"
+                        >
                             {user ? "Purchase" : "Get Started"}
                         </button>
                     </div>

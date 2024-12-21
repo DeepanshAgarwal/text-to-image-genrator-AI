@@ -38,7 +38,11 @@ const Testimonials = () => {
                                 {Array(testimonial.stars)
                                     .fill()
                                     .map((item, index) => (
-                                        <img src={assets.rating_star} alt="" />
+                                        <img
+                                            key={index}
+                                            src={assets.rating_star}
+                                            alt=""
+                                        />
                                     ))}
                             </div>
                             <p className="text-center text-sm text-gray-600">
